@@ -6,6 +6,10 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import { tanstackRouter } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
+  base: '/solus-recycle-DEMO/',
+  build: {
+    manifest: true,
+  },
   plugins: [
     tanstackRouter({ codeSplittingOptions: { addHmr: false, splitBehavior: () => [] }, generatedRouteTree: '.tanstack/routeTree.gen.ts' }),
     ...tanstackStart(),
