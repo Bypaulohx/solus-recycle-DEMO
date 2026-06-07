@@ -1,7 +1,6 @@
 "use client";
 
 import { HelpCircle, Mail, Phone, MessageSquare, ChevronRight } from "lucide-react";
-import Link from "next/link";
 
 const FAQS = [
   {
@@ -33,7 +32,7 @@ export default function AjudaPage() {
       </div>
 
       <div className="grid gap-3">
-        <Link
+        <a
           href="mailto:suporte@solus.app"
           className="rounded-2xl border border-border bg-card p-5 shadow-soft hover:shadow-card transition-all flex items-center gap-3"
         >
@@ -43,7 +42,7 @@ export default function AjudaPage() {
             <p className="text-sm text-muted-foreground">suporte@solus.app</p>
           </div>
           <ChevronRight className="ml-auto h-5 w-5 text-muted-foreground" />
-        </Link>
+        </a>
 
         <a
           href="tel:+556332123456"
@@ -74,7 +73,7 @@ export default function AjudaPage() {
         <div className="space-y-3">
           {FAQS.map((faq, i) => (
             <details
-              key={i}
+              key={faq.question}
               className="rounded-2xl border border-border bg-card shadow-soft"
             >
               <summary className="cursor-pointer p-4 font-bold text-foreground flex items-center justify-between">
