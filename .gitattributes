@@ -1,0 +1,9 @@
+{
+  "*": "Ignore all files by default",
+  "src/**": "Track source files",
+  "public/**": "Track public assets",
+  "package.json": "Track dependencies",
+  "next.config.ts": "Track Next.js config",
+  "tsconfig.json": "Track TypeScript config",
+  "tailwind.config.ts": "Track Tailwind config"
+}
