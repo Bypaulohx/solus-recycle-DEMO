@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../../tailwind.config.ts";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 @layer base {
@@ -55,7 +56,7 @@
   }
 
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
 
   html,
@@ -64,7 +65,8 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
     -webkit-font-smoothing: antialiased;
   }
 }
