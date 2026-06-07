@@ -23,9 +23,9 @@ npm run build
 npm start
 ```
 
-## Deploy no Vercel
+## Deploy no GitHub Pages
 
-Conecte o repositório GitHub ao Vercel e ele fará o deploy automaticamente.
+O deploy é feito automaticamente via GitHub Actions assim que um commit é feito na branch principal (`main` ou `master`). Certifique-se de habilitar o GitHub Pages no painel do repositório escolhendo a origem "GitHub Actions".
 
 ## Tecnologias
 
