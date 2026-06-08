@@ -73,14 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Solus Recycle" },
+      { name: "description", content: "Solus Recycle Web Demo showcases a web-based recycling scheduling application." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Solus Recycle" },
+      { property: "og:description", content: "Solus Recycle Web Demo showcases a web-based recycling scheduling application." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Solus Recycle" },
+      { name: "twitter:description", content: "Solus Recycle Web Demo showcases a web-based recycling scheduling application." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/52283e9e-9e6a-4e1d-b248-a19bc901bac0/id-preview-9d10a52e--20e669ca-313f-4732-bfe8-974645f4da17.lovable.app-1780866697024.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/52283e9e-9e6a-4e1d-b248-a19bc901bac0/id-preview-9d10a52e--20e669ca-313f-4732-bfe8-974645f4da17.lovable.app-1780866697024.png" },
     ],
     links: [
       {
