@@ -1,32 +1,27 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { Home, MapPin, Calendar, Recycle, User, Bell } from "lucide-react";
+import logo from "@/assets/solus/icon.svg";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { href: "/home", label: "Início", icon: Home },
-  { href: "/mapa", label: "Mapa", icon: MapPin },
-  { href: "/agendamentos", label: "Coletas", icon: Calendar },
-  { href: "/reciclagem", label: "Reciclar", icon: Recycle },
-  { href: "/perfil", label: "Perfil", icon: User },
+  { to: "/home", label: "Início", icon: Home },
+  { to: "/mapa", label: "Mapa", icon: MapPin },
+  { to: "/agendamentos", label: "Coletas", icon: Calendar },
+  { to: "/reciclagem", label: "Reciclar", icon: Recycle },
+  { to: "/perfil", label: "Perfil", icon: User },
 ] as const;
 
 export function AppLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const { location } = useRouterState();
+  const path = location.pathname;
 
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="sticky top-0 z-40 w-full border-b border-border bg-card/95 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-8">
-          <Link href="/home" className="flex items-center gap-2">
-            <img
-              src="/assets/solus/icon.svg"
-              alt="Solus"
-              className="h-9 w-9"
-            />
+          <Link to="/home" className="flex items-center gap-2">
+            <img src={logo} alt="Solus" className="h-9 w-9" />
             <span className="text-lg font-bold tracking-tight text-foreground">
               Solus<span className="text-primary">.</span>
             </span>
@@ -36,11 +31,11 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
           <nav className="hidden items-center gap-1 md:flex">
             {navItems.map((item) => {
               const Icon = item.icon;
-              const active = pathname === item.href || (item.href !== "/home" && pathname.startsWith(item.href));
+              const active = path === item.to || (item.to !== "/home" && path.startsWith(item.to));
               return (
                 <Link
-                  key={item.href}
-                  href={item.href}
+                  key={item.to}
+                  to={item.to}
                   className={cn(
                     "flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
                     active
@@ -56,7 +51,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
           </nav>
 
           <Link
-            href="/notificacoes"
+            to="/notificacoes"
             className="relative rounded-full p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
             aria-label="Notificações"
           >
@@ -76,11 +71,11 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <div className="mx-auto flex max-w-md items-center justify-around px-2 py-2">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const active = pathname === item.href || (item.href !== "/home" && pathname.startsWith(item.href));
+            const active = path === item.to || (item.to !== "/home" && path.startsWith(item.to));
             return (
               <Link
-                key={item.href}
-                href={item.href}
+                key={item.to}
+                to={item.to}
                 className={cn(
                   "flex flex-1 flex-col items-center gap-1 rounded-lg px-2 py-1.5 text-[11px] font-medium transition-colors",
                   active ? "text-primary" : "text-muted-foreground"
